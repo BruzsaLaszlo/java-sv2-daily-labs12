@@ -22,7 +22,7 @@ public class MathAlgorithms {
 
     private List<Integer> getDividers(int number) {
         var result = new ArrayList<Integer>();
-        for (int i = Math.abs(number) / 2; i >= 1; i--) {
+        for (int i = Math.abs(number); i >= 1; i--) {
             if (number % i == 0) {
                 result.add(i);
             }

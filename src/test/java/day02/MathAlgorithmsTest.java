@@ -25,5 +25,7 @@ class MathAlgorithmsTest {
         assertEquals(20, ma.getLNKO(100, 80));
         assertEquals(20, ma.getLNKO(-100, -80));
 
+        assertEquals(10, ma.getLNKO(10,10));
+
     }
 }
