@@ -11,8 +11,7 @@ class TeachersDispositionTest {
 
         TeachersDisposition teachersDisposition = new TeachersDisposition();
 
-        assertEquals(3, teachersDisposition.getLessonsInHour("Albatrosz Aladin"));
-        assertEquals(2, teachersDisposition.getLessonsInHour("Csincsilla Csilla"));
+        assertEquals(25, teachersDisposition.getLessonsInHour("Antilop Anett"));
 
     }
 }
