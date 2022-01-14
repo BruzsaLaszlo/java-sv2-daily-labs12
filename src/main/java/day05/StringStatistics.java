@@ -1,6 +1,7 @@
 package day05;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -19,16 +20,17 @@ public class StringStatistics {
     }
 
     public Map<Character, Integer> getCharactersStatisticsWithStream(String text) {
-        return text.chars().collect(
-                HashMap::new,
-                (map, value) -> {
-                    char c = (char) value;
-                    if (map.containsKey(c))
-                        map.put(c, map.get(c) + 1);
-                    else map.put(c, 1);
-                },
-                HashMap::putAll
-        );
+        return text.chars()
+                .mapToObj(value -> (char)value)
+                .collect(
+                        LinkedHashMap::new,
+                        (map, key) -> {
+                            if (map.containsKey(key))
+                                map.put(key, map.get(key) + 1);
+                            else map.put(key, 1);
+                        },
+                        LinkedHashMap::putAll
+                );
     }
 
 }
